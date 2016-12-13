@@ -60,9 +60,18 @@ $ docker run kevinsimper/openbr br -help
 -exit
 ```
 
-Face Recognition
+
+# Face Recognition
 
 This tutorial gives an example on how to perform face recognition in OpenBR. OpenBR implements the 4SF2 algorithm to perform face recognition. Please read the paper for more specific algorithm details.
+
+You can easily run face recognition with docker. You can git clone this repository and run this command:
+
+```
+docker run -v $(pwd):/tmp/downloads/ kevinsimper/openbr bash -c " br -algorithm FaceRecognition \
+    -compare ../data/MEDS/img/S354-01-t10_01.jpg ../data/MEDS/img/S354-02-t10_01.jpg \
+     -compare ../data/MEDS/img/S354-01-t10_01.jpg ../data/MEDS/img/S386-04-t10_01.jpg
+```
 
 To start, lets run face recognition from the command line. Open the terminal and enter
 
